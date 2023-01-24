@@ -13,6 +13,7 @@ import routes from "../routes";
 import { logUserIn } from "../apollo";
 import { useLocation } from "react-router-dom";
 import SuccessNotif from "../components/auth/SuccessNotif";
+import logo from "../image/logo/negareh-logo.svg";
 
 const GoogleLine = styled.div`
   display: flex;
@@ -96,7 +97,7 @@ function Login() {
         <title>Login</title>
       </Helmet>
       <FormBox>
-        <h1>Negareh</h1>
+        <img className="logo" src={logo} alt="Logo" />
         <SuccessNotif
         // message={location?.state?.message || null}
         />

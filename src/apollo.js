@@ -5,10 +5,12 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { createUploadLink } from "apollo-upload-client";
 const TOKEN = "TOKEN";
 const DARK_MODE = "DARK_MODE";
 export const isLoggedInVar = makeVar(Boolean(localStorage.getItem(TOKEN)));
-export const darkModeVar = makeVar(Boolean(localStorage.getItem(DARK_MODE)));
+export const darkModeVar = makeVar(Boolean(localStorage.getIte, DARK_MODE));
+export const showEditProfile = makeVar(false);
 
 export const enableDarkMode = () => {
   localStorage.setItem(DARK_MODE, "true");
@@ -45,5 +47,11 @@ const authLink = setContext((_, { headers }) => {
 
 export const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      User: {
+        keyFields: (obj) => `User:${obj.userName}`,
+      },
+    },
+  }),
 });

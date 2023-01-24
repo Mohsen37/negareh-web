@@ -12,6 +12,7 @@ import Input from "../components/auth/Input";
 import Separator from "../components/auth/Separator";
 import { GrayBoldLink } from "../components/shared";
 import routes from "../routes";
+import logo from "../image/logo/negareh-logo.svg";
 
 const Subtitle = styled(GrayBoldLink)`
   text-align: center;
@@ -104,7 +105,7 @@ function SignUp() {
         <title>Sign up</title>
       </Helmet>
       <FormBox>
-        <h1>Negareh</h1>
+        <img className="logo" src={logo} alt="Logo" />
         <Subtitle size={"1.2rem"}>
           Sign up to see photos and videos from your friends
         </Subtitle>

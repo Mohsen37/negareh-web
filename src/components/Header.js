@@ -1,12 +1,15 @@
 import { useReactiveVar } from "@apollo/client";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { isLoggedInVar } from "../apollo";
+import { isLoggedInVar, logUserOut } from "../apollo";
 import useUser from "../hooks/useUser";
 import logo from "../image/logo/negareh-logo.svg";
 import routes from "../routes";
 import Avatar from "./Avatar";
+
 const HeaderStyle = styled.div`
+  position: sticky;
+  top: 0;
   width: 100%;
   border-bottom: 2px solid ${(props) => props.theme.borderColor};
   background-color: white;
@@ -60,13 +63,22 @@ function Header() {
         <Icons>
           {isLoggedIn ? (
             <>
-              <i className="bi bi-house-fill"></i>
+              <Link to={"/"}>
+                <i className="bi bi-house-fill"></i>
+              </Link>
               <i className="bi bi-compass"></i>
-              {data?.me?.avatar ? (
-                <Avatar url={data?.me?.avatar} />
-              ) : (
-                <i className="bi bi-person-circle"></i>
-              )}
+
+              <Link to={`/users/${data?.me?.userName}`}>
+                {data?.me?.avatar ? (
+                  <Avatar url={data?.me?.avatar} />
+                ) : (
+                  <i className="bi bi-person-circle"></i>
+                )}
+              </Link>
+              <i
+                onClick={() => logUserOut()}
+                className="bi bi-box-arrow-right"
+              ></i>
             </>
           ) : (
             <Link href={routes.home} to={routes.home}>

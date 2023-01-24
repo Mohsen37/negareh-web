@@ -21,6 +21,7 @@ const AvatarStyle = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: black;
   }
 `;
 
@@ -33,11 +34,7 @@ const Image = styled.img`
 function Avatar({ url = "", lg = false }) {
   return (
     <AvatarStyle lg={lg}>
-      {url !== "" ? (
-        <img src={url} alt="Avatar" />
-      ) : (
-        <i className="bi bi-person-circle"></i>
-      )}
+      {url !== "" ? <img src={url} /> : <i className="bi bi-person-circle"></i>}
     </AvatarStyle>
   );
 }

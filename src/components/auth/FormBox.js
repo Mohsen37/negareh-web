@@ -23,6 +23,10 @@ const FormBoxStyle = styled(BaseBox)`
     font-weight: 500;
     font-family: "Anastasia";
   }
+  .logo {
+    height: 85px;
+    margin-bottom: 1rem;
+  }
 `;
 
 function FormBox({ children }) {

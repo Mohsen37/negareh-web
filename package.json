@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "apollo-upload-client": "^17.0.0",
     "bootstrap-icons": "^1.10.2",
     "graphql": "^16.6.0",
     "react": "^18.2.0",
@@ -12,6 +13,7 @@
     "react-hook-form": "^7.39.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
+    "sanitize-html": "^2.7.3",
     "styled-components": "^5.3.6",
     "styled-reset": "^4.4.2"
   },
