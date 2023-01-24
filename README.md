@@ -1,6 +1,11 @@
 # Instagram Clone - web
 
-- [ ] Router
-- [ ] Authentication
-- [ ] Arch
-- [ ] Styles
+- [x] Router
+- [x] Authentication
+- [x] Arch
+- [x] Navbar
+- [x] Upload
+- [x] Edit
+- [x] Comment
+- [x] Like/Unlike
+- [x] Cache
